@@ -13,8 +13,8 @@ use Besnovatyj\Dashboard\Module;
  *
  * Объявляется через `extra.config-plugin`, собирается modman в merge-plan и мёржится в рантайме.
  * Регистрирует модуль и его L2-bootstrap (registry-gated: попадает в конфиг только когда модуль
- * активен). Меню (adminMenu) и миграции остаются вкладами modman. Значения — из статических методов
- * {@see Module}, без дублирования.
+ * активен). Меню админки — `adminMenu.php` (группа `admin-menu`), миграции — вклад modman.
+ * Значения — из статических методов {@see Module}, без дублирования.
  */
 return [
     'modules' => [

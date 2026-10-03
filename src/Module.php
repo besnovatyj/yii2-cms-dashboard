@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Besnovatyj\Dashboard;
 
 use Besnovatyj\Contracts\module\DeclaresModule;
-use Besnovatyj\Contracts\module\ProvidesAdminMenu;
 use Besnovatyj\Contracts\module\ProvidesBootstrap;
 use Besnovatyj\Contracts\module\ProvidesMigrations;
 use Besnovatyj\Kernel\module\CmsModule;
@@ -24,7 +23,7 @@ use Besnovatyj\Kernel\module\CmsModule;
  * Раскладка (включённость/порядок) хранится в собственной таблице модуля `dashboard_widget`.
  */
 class Module extends CmsModule implements
-    DeclaresModule, ProvidesAdminMenu,
+    DeclaresModule, 
     ProvidesBootstrap, ProvidesMigrations
 {
     public const bool EDITABLE = true;
@@ -34,7 +33,6 @@ class Module extends CmsModule implements
     public static function moduleId(): string { return self::MODULE_ID; }
     public static function moduleVersion(): string { return self::VERSION; }
     public static function isEditable(): bool { return self::EDITABLE; }
-    public static function adminMenu(): array { return require __DIR__ . '/config/adminMenu.php'; }
     public static function moduleConfig(): array { return require __DIR__ . '/config/config.php'; }
     public static function bootstrapClasses(): array { return [Bootstrap::class]; }
     public static function migrationPath(): string { return __DIR__ . '/migrations'; }

@@ -6,6 +6,9 @@
 
 declare(strict_types=1);
 
+use Besnovatyj\Contracts\adminMenu\AdminMenuLocation;
+use Besnovatyj\Contracts\adminMenu\AdminMenuPlacement;
+
 return [[
     'label' => 'Панель админки',
     'iconClass' => 'bi bi-grid-1x2-fill me-1',
@@ -15,13 +18,13 @@ return [[
     },
     '_meta' => [
         'placements' => [
-            [
-                'location' => 'right-sidebar',
-                'group' => 'Service',
-                'groupIcon' => 'bi bi-sliders',
-                'priority' => 110,
-                'groupPriority' => 100,
-            ],
+            new AdminMenuPlacement(
+                location: AdminMenuLocation::RightSidebar,
+                group: 'Service',
+                groupIcon: 'bi bi-sliders',
+                groupPriority: 100,
+                priority: 110,
+            ),
         ],
     ],
 ]];
