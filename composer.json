@@ -10,7 +10,6 @@
     }
   ],
   "minimum-stability": "stable",
-  "version": "1.0.0",
   "extra": {
     "moduleClass": "Besnovatyj\\Dashboard\\Module",
     "moduleId": "Dashboard",
